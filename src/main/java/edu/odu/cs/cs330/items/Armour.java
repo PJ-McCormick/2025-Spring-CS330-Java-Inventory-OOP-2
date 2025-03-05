@@ -51,9 +51,10 @@ public class Armour extends Item {
         this.setDurability(0);
         this.setDefense(0);
         this.setMaterial("");
-         // "no modifier"
-         this.setModifierLevel(0);
-         this.setElement("");
+        // "no modifier"
+        //this.setModifier("");
+        this.setModifierLevel(0);
+        this.setElement("");
     }
 
     /**
@@ -241,24 +242,28 @@ public class Armour extends Item {
         Armour rhsItem = (Armour) rhs;
 
         // Replace the next line
-        if(this.name == rhsItem.getName() 
+        return(super.name == rhsItem.getName() 
             && this.material == rhsItem.getMaterial()
             && this.modifier == rhsItem.getModifier()
-            && this.element == rhsItem.getElement())
-            return true;
-        else
-            return false;
+            && this.element == rhsItem.getElement());       
     }
-
+     
     /**
      * Generate a hash code by adding the name, material, modifier, and element
      * hash codes.
      */
     @Override
-    public int hashCode()
-    {
-        return -1;
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : super.name.hashCode());
+        result = prime * result + ((material == null) ? 0 : material.hashCode());
+        result = prime * result + ((modifier == null) ? 0 : modifier.hashCode());
+        result = prime * result + ((element == null) ? 0 : element.hashCode());
+        return result;
     }
+
+
 
     /**
      * *Print* one Armour.
