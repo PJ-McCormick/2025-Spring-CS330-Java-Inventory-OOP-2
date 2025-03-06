@@ -242,10 +242,10 @@ public class Armour extends Item {
         Armour rhsItem = (Armour) rhs;
 
         // Replace the next line
-        return(super.name == rhsItem.getName() 
-            && this.material == rhsItem.getMaterial()
-            && this.modifier == rhsItem.getModifier()
-            && this.element == rhsItem.getElement());       
+        return(super.name.equals(rhsItem.getName()) 
+            && this.material.equals(rhsItem.getMaterial())
+            && this.modifier.equals(rhsItem.getModifier())
+            && this.element.equals(rhsItem.getElement()));       
     }
      
     /**

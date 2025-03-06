@@ -209,9 +209,9 @@ public class Tool extends Item {
         Tool rhsItem = (Tool) rhs;
 
         // Replace the next line
-        return (super.name == rhsItem.getName()
-                && this.material == rhsItem.getMaterial()
-                && this.modifier == rhsItem.getModifier());
+        return (super.name.equals(rhsItem.getName())
+                && this.material.equals(rhsItem.getMaterial())
+                && this.modifier.equals(rhsItem.getModifier()));
     }
 
     /**

@@ -124,8 +124,8 @@ public class Consumable extends Item {
         Consumable rhsItem = (Consumable) rhs;
 
         // Replace the next line
-        return (super.name == rhsItem.getName() 
-                && this.effect == rhsItem.getEffect());
+        return (super.name.equals(rhsItem.getName())
+                && this.effect.equals(rhsItem.getEffect()));
     }
 
     /**
